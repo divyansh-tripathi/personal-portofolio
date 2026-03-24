@@ -15,13 +15,11 @@ export default function ChatRoom() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
-  // Cek login
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (u) => setUser(u));
     return () => unsub();
   }, []);
 
-  // Ambil pesan real-time
   useEffect(() => {
     const q = query(collection(db, "messages"), orderBy("createdAt"));
     const unsub = onSnapshot(q, (snapshot) => {
@@ -30,7 +28,6 @@ export default function ChatRoom() {
     return () => unsub();
   }, []);
 
-  // Kirim pesan
   const sendMessage = async (e) => {
     e.preventDefault();
     if (!message.trim()) return;
@@ -49,7 +46,6 @@ export default function ChatRoom() {
     <div className="bg-zinc-900 border border-gray-700 p-6 rounded-xl shadow-lg max-w-xl mx-auto mt-5">
       <h2 className="text-2xl font-bold text-center mb-4 text-white">💬 Chat Room</h2>
 
-      {/* Header user */}
       {user && (
         <div className="flex justify-between items-center mb-4 border-b border-gray-700 pb-3">
           <div className="flex items-center gap-3">
@@ -65,7 +61,6 @@ export default function ChatRoom() {
         </div>
       )}
 
-      {/* Area pesan */}
       <div className="h-72 overflow-y-auto border border-gray-700 p-3 rounded-lg bg-zinc-800 mb-4 space-y-3">
         {messages.map((msg) => (
           <div
@@ -80,11 +75,10 @@ export default function ChatRoom() {
               />
             )}
             <div
-              className={`p-3 rounded-lg max-w-[75%] ${
-                msg.uid === user?.uid
+              className={`p-3 rounded-lg max-w-[75%] ${msg.uid === user?.uid
                   ? "bg-blue-500 text-white"
                   : "bg-gray-700 text-white"
-              }`}
+                }`}
             >
               <div className="text-xs opacity-70 mb-1">{msg.displayName}</div>
               <div>{msg.text}</div>
@@ -100,7 +94,6 @@ export default function ChatRoom() {
         ))}
       </div>
 
-      {/* Form login / kirim pesan */}
       {user ? (
         <form onSubmit={sendMessage} className="flex gap-2 flex-wrap sm:flex-nowrap w-full">
           <input

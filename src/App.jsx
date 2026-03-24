@@ -8,19 +8,18 @@ import Lanyard from "./components/Lanyard/Lanyard";
 import GlassIcons from "./components/GlassIcons/GlassIcons";
 import { listTools, listProyek } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
-import ProjectModal from "./components/ProjectModal/ProjectModal"; // <-- IMPORT MODAL
+import ProjectModal from "./components/ProjectModal/ProjectModal";
 import Aurora from "./components/Aurora/Aurora";
 import AOS from "aos";
 import ChatRoom from "./components/ChatRoom";
-import "aos/dist/aos.css"; // You can also use <link> for styles
-// ..
+import "aos/dist/aos.css";
 AOS.init();
 
 function App() {
   const aboutRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const [selectedProject, setSelectedProject] = useState(null); // null = modal tertutup
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
@@ -29,14 +28,12 @@ function App() {
   const handleCloseModal = () => {
     setSelectedProject(null);
   };
-  // -------------------------
 
   useEffect(() => {
     const isReload =
       performance.getEntriesByType("navigation")[0]?.type === "reload";
 
     if (isReload) {
-      // Ambil path tanpa hash
       const baseUrl = window.location.origin + "/portofolio/";
       window.location.replace(baseUrl);
     }
@@ -139,7 +136,7 @@ function App() {
             />
           </div>
         </div>
-        {/* tentang */}
+
         <div
           className="mt-15 mx-auto w-full max-w-[1600px] rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6"
           id="about"
@@ -151,7 +148,6 @@ function App() {
             data-aos-once="true"
           >
             <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-b md:border-b-0 md:border-r border-violet-500/30">
-              {/* Kolom kiri */}
               <div className="flex-1 text-left">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
                   About Me
@@ -200,7 +196,6 @@ function App() {
               </div>
             </div>
 
-            {/* Kolom kanan */}
             <div className="basis-full md:basis-5/12 pl-0 md:pl-8 overflow-hidden max-w-full flex justify-center ">
               <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
             </div>
@@ -254,9 +249,7 @@ function App() {
             ))}
           </div>
         </div>
-        {/* tentang */}
 
-        {/* Proyek */}
         <div
           className="proyek mt-32 py-10"
           id="project"
@@ -292,7 +285,7 @@ function App() {
           >
             <ChromaGrid
               items={listProyek}
-              onItemClick={handleProjectClick} // Kirim fungsi untuk handle klik
+              onItemClick={handleProjectClick}
               radius={500}
               damping={0.45}
               fadeOut={0.6}
@@ -300,9 +293,6 @@ function App() {
             />
           </div>
         </div>
-        {/* Proyek */}
-
-        {/* Kontak */}
         <div className="kontak mt-32 sm:p-10 p-0" id="contact">
           <h1
             className="text-4xl mb-2 font-bold text-center"
@@ -322,9 +312,7 @@ function App() {
             Get in touch with me or chat in real-time
           </p>
 
-          {/* Container dua kolom */}
           <div className="flex flex-col md:flex-row gap-8">
-            {/* Chat Room di kiri */}
             <div
               className="flex-1 bg-zinc-800 p-6 rounded-md"
               data-aos="fade-up"
@@ -335,7 +323,6 @@ function App() {
               <ChatRoom />
             </div>
 
-            {/* Contact Form di kanan */}
             <div className="flex-1">
               <form
                 action="https://formsubmit.co/divyanshtripathi201@gmail.com"
@@ -405,7 +392,6 @@ function App() {
             </div>
           </div>
         </div>
-        {/* Kontak */}
       </main>
 
       <ProjectModal

@@ -14,14 +14,12 @@ const Navbar = ({ hidden = false }) => {
 
   return (
     <nav className="navbar relative z-50 py-7 flex items-center justify-between px-6 md:px-12">
-      {/* Logo */}
       <div className="logo">
         <h1 className="text-3xl font-bold text-white p-1 md:bg-transparent md:text-white">
           Portofolio
         </h1>
       </div>
 
-      {/* Menu */}
       <ul
         className={`flex items-center sm:gap-10 gap-4 
           md:static fixed left-1/2 -translate-x-1/2 md:translate-x-0 
