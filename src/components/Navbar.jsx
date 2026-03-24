@@ -16,7 +16,7 @@ const Navbar = ({ hidden = false }) => {
     <nav className="navbar relative z-50 py-7 flex items-center justify-between px-6 md:px-12">
       <div className="logo">
         <h1 className="text-3xl font-bold text-white p-1 md:bg-transparent md:text-white">
-          Portofolio
+          Portfolio
         </h1>
       </div>
 
