@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="w-full flex flex-col md:flex-row items-center md:justify-between gap-6">
 
         <h1 className="text-2xl font-bold order-1 md:order-none">
-          Portofolio
+          Portfolio
         </h1>
 
         <div className="flex gap-3 order-2 md:order-none">
