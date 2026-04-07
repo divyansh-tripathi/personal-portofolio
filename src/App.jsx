@@ -6,7 +6,7 @@ import ScrambledText from "./components/ScrambledText/ScrambledText";
 import SplitText from "./components/SplitText/SplitText";
 import Lanyard from "./components/Lanyard/Lanyard";
 import GlassIcons from "./components/GlassIcons/GlassIcons";
-import { listTools, listProyek } from "./data";
+import { listTools, listProyekFrontend, listProyekFullStack } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
 import ProjectModal from "./components/ProjectModal/ProjectModal";
 import Aurora from "./components/Aurora/Aurora";
@@ -274,8 +274,34 @@ function App() {
             data-aos-delay="400"
             data-aos-once="true"
           >
+            <h1
+          className="text-center my-5 text-3xl font-bold mb-4"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-once="true"
+        >
+          🚀 Full Stack Projects
+        </h1>
+            
             <ChromaGrid
-              items={listProyek}
+              items={listProyekFullStack}
+              onItemClick={handleProjectClick}
+              radius={500}
+              damping={0.45}
+              fadeOut={0.6}
+              ease="power3.out"
+            />
+
+            <h1
+          className="text-center my-5 text-3xl font-bold mb-4"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-once="true"
+        >
+          🎨 Frontend Projects
+        </h1>
+            <ChromaGrid
+              items={listProyekFrontend}
               onItemClick={handleProjectClick}
               radius={500}
               damping={0.45}

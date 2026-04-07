@@ -1,8 +1,8 @@
-import HeroImage from "/assets/hero-img.webp";
+// import HeroImage from "/assets/hero-img.webp";
 
-const Image = {
-  HeroImage,
-};
+// const Image = {
+//   HeroImage,
+// };
 
 export default Image;
 
@@ -18,7 +18,6 @@ import Tools14 from "/assets/tools/html.png";
 import Tools15 from "/assets/tools/css.png";
 import Tools18 from "/assets/tools/vite.png";
 import Tools19 from "/assets/tools/mysql.png";
-
 
 export const listTools = [
   {
@@ -109,44 +108,58 @@ export const listTools = [
   },
 ];
 
-
 import PortfolioProject from "/assets/proyek/personal-portfolio.png";
 import BookStoreProject from "/assets/proyek/bookstore.png";
 import EcommerceProject from "/assets/proyek/e-com.png";
 import TaskManagerProject from "/assets/proyek/taskmanagement.png";
 import OchiProject from "/assets/proyek/ochi.png";
 import BlogProject from "/assets/proyek/blog-app.png";
+import FindYourSpace from "/assets/proyek/FindYourSpace.png";
+import HireSphereAi from "/assets/proyek/HireSphereAi.png";
 
-export const listProyek = [
 
+export const listProyekFullStack = [
   {
     id: 1,
-    image: PortfolioProject,
-    title: "Personal Portfolio",
-    subtitle: "A high-performance personal brand showcase built with React and Tailwind CSS.",
-    fullDescription: "A sleek, responsive portfolio designed to showcase professional work and skills. Features include smooth scrolling, contact form integration, and a focus on high ATS performance and clean UI aesthetics.",
-    borderColor: "#6366F1",
-    gradient: "linear-gradient(180deg, #6366F1, #000)",
-    url: "https://github.com/divyansh-tripathi/Portfolio.git",
-    dad: "100",
-  },
+    image: HireSphereAi,
+    title: "HireSphereAI",
+    subtitle: "AI-powered interview preparation platform.",
+    fullDescription: "A smart interview prep web app where users can log in and generate role-based interview questions using AI. It helps candidates practice and improve for different job roles with dynamic question generation.",
+    techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "AI API", "Tailwind CSS"],
+    borderColor: "#8B5CF6",
+    gradient: "linear-gradient(180deg, #8B5CF6, #000)",
+    url: "https://github.com/divyansh-tripathi/interview_prep.git",
+    dad: "100"
+},
   {
     id: 2,
-    image: BookStoreProject,
-    title: "BookStore Application",
-    subtitle: "A digital library interface focusing on user experience and book discovery.",
-    fullDescription: "A frontend-heavy application that allows users to browse, filter, and search through a vast collection of books. Built with a focus on clean state management and responsive grid layouts.",
-    borderColor: "#F59E0B",
-    gradient: "linear-gradient(180deg, #F59E0B, #000)",
-    url: "https://github.com/divyansh-tripathi/BookStore-Application-main.git",
+    image: FindYourSpace,
+    title: "Find Your Space",
+    subtitle: "Nearby hotel room search and booking app.",
+    fullDescription:
+      "A full-stack web app where users can search and book nearby hotel rooms. It includes user and admin roles—users explore rooms and make bookings, while admins manage listings and data. Built with MERN stack and responsive design.",
+    techStack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "Tailwind CSS",
+    ],
+    borderColor: "#10B981",
+    gradient: "linear-gradient(180deg, #10B981, #000)",
+    url: "https://github.com/divyansh-tripathi/Find-your-space.git",
     dad: "200",
   },
+
   {
     id: 3,
     image: EcommerceProject,
     title: "E-commerce Website",
-    subtitle: "A comprehensive full-stack commerce solution with secure checkout.",
-    fullDescription: "A robust full-stack platform featuring user authentication, product management, and a functional shopping cart. This project utilizes an MVC architecture to handle complex data flow between the frontend and backend.",
+    subtitle:
+      "A comprehensive full-stack commerce solution with secure checkout.",
+    fullDescription:
+      "A robust full-stack platform featuring user authentication, product management, and a functional shopping cart. This project utilizes an MVC architecture to handle complex data flow between the frontend and backend.",
     borderColor: "#EF4444",
     gradient: "linear-gradient(180deg, #EF4444, #000)",
     url: "https://github.com/divyansh-tripathi/new-ecomm.git",
@@ -156,34 +169,66 @@ export const listProyek = [
     id: 4,
     image: TaskManagerProject,
     title: "Task Management",
-    subtitle: "A productivity tool for organizing daily workflows and deadlines.",
-    fullDescription: "A functional task tracker built with React and the Context API for efficient state management. Users can create, update, and delete tasks while maintaining a persistent and organized workflow.",
+    subtitle:
+      "A productivity tool for organizing daily workflows and deadlines.",
+    fullDescription:
+      "A functional task tracker built with React and the Context API for efficient state management. Users can create, update, and delete tasks while maintaining a persistent and organized workflow.",
     borderColor: "#10B981",
     gradient: "linear-gradient(180deg, #10B981, #000)",
     url: "https://github.com/divyansh-tripathi/task_management.git",
     dad: "400",
   },
+];
+
+export const listProyekFrontend = [
   {
-    id: 5,
+    id: 1,
+    image: PortfolioProject,
+    title: "Personal Portfolio",
+    subtitle:
+      "A high-performance personal brand showcase built with React and Tailwind CSS.",
+    fullDescription:
+      "A sleek, responsive portfolio designed to showcase professional work and skills. Features include smooth scrolling, contact form integration, and a focus on high ATS performance and clean UI aesthetics.",
+    borderColor: "#6366F1",
+    gradient: "linear-gradient(180deg, #6366F1, #000)",
+    url: "https://github.com/divyansh-tripathi/Portfolio.git",
+    dad: "100",
+  },
+  {
+    id: 2,
+    image: BookStoreProject,
+    title: "BookStore Application",
+    subtitle:
+      "A digital library interface focusing on user experience and book discovery.",
+    fullDescription:
+      "A frontend-heavy application that allows users to browse, filter, and search through a vast collection of books. Built with a focus on clean state management and responsive grid layouts.",
+    borderColor: "#F59E0B",
+    gradient: "linear-gradient(180deg, #F59E0B, #000)",
+    url: "https://github.com/divyansh-tripathi/BookStore-Application-main.git",
+    dad: "200",
+  },
+  {
+    id: 3,
     image: OchiProject,
     title: "Ochi Website",
     subtitle: "A high-end landing page clone focusing on advanced animations.",
-    fullDescription: "A frontend exploration project focused on replicating sophisticated design elements and smooth GSAP animations. This project demonstrates mastery over modern CSS and interactive UI components.",
+    fullDescription:
+      "A frontend exploration project focused on replicating sophisticated design elements and smooth GSAP animations. This project demonstrates mastery over modern CSS and interactive UI components.",
     borderColor: "#8B5CF6",
     gradient: "linear-gradient(180deg, #8B5CF6, #000)",
     url: "https://github.com/divyansh-tripathi/ochi.git",
-    dad: "500",
+    dad: "300",
   },
   {
-    id: 6,
+    id: 4,
     image: BlogProject,
     title: "Blog Application",
     subtitle: "A content-driven platform for sharing insights and articles.",
-    fullDescription: "A clean, typography-focused frontend application designed for readability. It features dynamic routing for individual posts and a responsive layout for a seamless reading experience across devices.",
+    fullDescription:
+      "A clean, typography-focused frontend application designed for readability. It features dynamic routing for individual posts and a responsive layout for a seamless reading experience across devices.",
     borderColor: "#3B82F6",
     gradient: "linear-gradient(180deg, #3B82F6, #000)",
     url: "https://github.com/divyansh-tripathi/blogApp-UI-main.git",
-    dad: "600",
-  }
-
+    dad: "400",
+  },
 ];
