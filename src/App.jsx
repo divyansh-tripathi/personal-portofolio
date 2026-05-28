@@ -82,7 +82,7 @@ function App() {
             />
             <div className="flex items-center sm:gap-4 gap-2">
               <a
-                href="https://drive.google.com/file/d/1NNTAECYd5ZzQtcNGqCJ-kMqpUarW0p69/view?usp=sharing"
+                href="https://drive.google.com/file/d/1I69x5zCYvhrTNpuJQGJbv87o4B0nBJLM/preview"
                 download="Resume.pdf"
                 className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
               >
