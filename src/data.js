@@ -18,32 +18,51 @@ import Tools14 from "/assets/tools/html.png";
 import Tools15 from "/assets/tools/css.png";
 import Tools18 from "/assets/tools/vite.png";
 import Tools19 from "/assets/tools/mysql.png";
+import Tools20 from "/assets/tools/express.png";
+import Tools21 from "/assets/tools/MongoDB.png";
+import Tools22 from "/assets/tools/Python.png";
+import Tools23 from "/assets/tools/Django.png";
 
 export const listTools = [
   {
     id: 1,
-    gambar: Tools1,
-    nama: "Visual Studio Code",
-    ket: "Code Editor",
+    gambar: Tools21,
+    nama: "MongoDB",
+    ket: "Database",
     dad: "100",
   },
   {
     id: 2,
-    gambar: Tools2,
-    nama: "React JS",
+    gambar: Tools20,
+    nama: "Express.js",
     ket: "Framework",
     dad: "200",
   },
   {
     id: 3,
-    gambar: Tools7,
-    nama: "Node JS",
-    ket: "Javascript Runtime",
-    dad: "700",
+    gambar: Tools2,
+    nama: "React JS",
+    ket: "Framework",
+    dad: "300",
   },
 
   {
     id: 4,
+    gambar: Tools7,
+    nama: "Node JS",
+    ket: "Javascript Runtime",
+    dad: "400",
+  },
+  {
+    id: 5,
+    gambar: Tools1,
+    nama: "Visual Studio Code",
+    ket: "Code Editor",
+    dad: "500",
+  },
+
+  {
+    id: 6,
     gambar: Tools6,
     nama: "Javascript",
     ket: "Language",
@@ -51,61 +70,68 @@ export const listTools = [
   },
 
   {
-    id: 5,
+    id: 7,
     gambar: Tools14,
     nama: "HTML",
     ket: "Language",
-    dad: "1400",
-  },
-  {
-    id: 6,
-    gambar: Tools15,
-    nama: "CSS",
-    ket: "Language",
-    dad: "1500",
-  },
-  {
-    id: 7,
-    gambar: Tools4,
-    nama: "Tailwind CSS",
-    ket: "Framework",
-    dad: "400",
+    dad: "700",
   },
   {
     id: 8,
-    gambar: Tools5,
-    nama: "Bootstrap",
+    gambar: Tools4,
+    nama: "Tailwind CSS",
     ket: "Framework",
-    dad: "500",
+    dad: "900",
   },
   {
     id: 9,
-    gambar: Tools8,
-    nama: "Github",
-    ket: "Repository",
-    dad: "800",
+    gambar: Tools5,
+    nama: "Bootstrap",
+    ket: "Framework",
+    dad: "1000",
   },
   {
     id: 10,
+    gambar: Tools8,
+    nama: "Github",
+    ket: "Repository",
+    dad: "1100",
+  },
+  {
+    id: 11,
     gambar: Tools13,
     nama: "Firebase",
+    ket: "Framework",
+    dad: "1200",
+  },
+  {
+    id: 12,
+    gambar: Tools18,
+    nama: "Vite",
     ket: "Framework",
     dad: "1300",
   },
   {
-    id: 11,
-    gambar: Tools18,
-    nama: "Vite",
-    ket: "Framework",
-    dad: "1800",
-  },
-  {
-    id: 12,
+    id: 13,
     gambar: Tools19,
     nama: "MySql",
     ket: "Framework",
-    dad: "1900",
+    dad: "1400",
   },
+  {
+    id: 14,
+    gambar: Tools22,
+    nama: "Python",
+    ket: "Language",
+    dad: "1500",
+  },
+  {
+    id: 15,
+    gambar: Tools23,
+    nama: "Django",
+    ket: "Framework",
+    dad: "1600",
+  }
 ];
 
 import PortfolioProject from "/assets/proyek/personal-portfolio.png";
@@ -117,20 +143,27 @@ import BlogProject from "/assets/proyek/blog-app.png";
 import FindYourSpace from "/assets/proyek/FindYourSpace.png";
 import HireSphereAi from "/assets/proyek/HireSphereAi.png";
 
-
 export const listProyekFullStack = [
   {
     id: 1,
     image: HireSphereAi,
     title: "HireSphereAI",
     subtitle: "AI-powered interview preparation platform.",
-    fullDescription: "A smart interview prep web app where users can log in and generate role-based interview questions using AI. It helps candidates practice and improve for different job roles with dynamic question generation.",
-    techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "AI API", "Tailwind CSS"],
+    fullDescription:
+      "A smart interview prep web app where users can log in and generate role-based interview questions using AI. It helps candidates practice and improve for different job roles with dynamic question generation.",
+    techStack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "AI API",
+      "Tailwind CSS",
+    ],
     borderColor: "#8B5CF6",
     gradient: "linear-gradient(180deg, #8B5CF6, #000)",
     url: "https://github.com/divyansh-tripathi/interview_prep.git",
-    dad: "100"
-},
+    dad: "100",
+  },
   {
     id: 2,
     image: FindYourSpace,

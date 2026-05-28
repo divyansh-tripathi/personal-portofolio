@@ -11,12 +11,20 @@ const lanyard = "/assets/lanyard.png";
 
 import * as THREE from 'three';
 import './Lanyard.css';
+import ShinyText from '../ShinyText/ShinyText';
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
 export default function Lanyard({ position = [0, 0, 30], gravity = [0, -40, 0], fov = 20, transparent = true }) {
   return (
-    <div className="lanyard-wrapper">
+    <div className="lanyard-wrapper relative">
+      <span className='text-white absolute top-20 left-10 rotate-90 '><ShinyText
+                text="Drag ID card to flip "
+                disabled={false}
+                speed={3}
+                className="custom-class"
+              /></span>
+
       <Canvas
         camera={{ position: position, fov: fov }}
         gl={{ alpha: transparent }}
