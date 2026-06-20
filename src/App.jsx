@@ -172,7 +172,7 @@ function App() {
                     data-aos-once="true"
                   >
                     <h1 className="text-3xl md:text-4xl mb-1">
-                      7.98<span className="text-violet-500">/10</span>
+                      7.48<span className="text-violet-500">/10</span>
                     </h1>
                     <p>CGPA</p>
                   </div>
