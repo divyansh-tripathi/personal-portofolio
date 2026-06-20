@@ -142,10 +142,39 @@ import OchiProject from "/assets/proyek/ochi.png";
 import BlogProject from "/assets/proyek/blog-app.png";
 import FindYourSpace from "/assets/proyek/FindYourSpace.png";
 import HireSphereAi from "/assets/proyek/HireSphereAi.png";
+import ExamNotesAI from "/assets/proyek/ExamNotesAI.png"
 
 export const listProyekFullStack = [
   {
-    id: 1,
+  id: 1,
+  image: ExamNotesAI,
+  title: "ExamNotes AI",
+  subtitle: "AI-powered SaaS platform for smart exam preparation.",
+  fullDescription:
+    "ExamNotes AI is a full-stack MERN SaaS application that transforms study topics into structured exam notes, revision cheat sheets, interactive flowcharts, charts, and printable PDFs using Google's Gemini AI. It features secure authentication, Stripe-powered credit payments, and a modern responsive UI for an enhanced learning experience.",
+  techStack: [
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Google Gemini API",
+    "Firebase Auth",
+    "JWT",
+    "Stripe",
+    "Mermaid.js",
+    "Recharts",
+    "PDFKit",
+    "Tailwind CSS",
+    "Framer Motion",
+  ],
+  borderColor: "#7C3AED",
+  gradient: "linear-gradient(180deg, #7C3AED, #000)",
+  url: "https://github.com/divyansh-tripathi/AI-ExamNotes.git",
+  liveUrl: "https://ai-examnotesclient.onrender.com",
+  dad: "2025",
+},
+  {
+    id: 2,
     image: HireSphereAi,
     title: "HireSphereAI",
     subtitle: "AI-powered interview preparation platform.",
@@ -162,10 +191,11 @@ export const listProyekFullStack = [
     borderColor: "#8B5CF6",
     gradient: "linear-gradient(180deg, #8B5CF6, #000)",
     url: "https://github.com/divyansh-tripathi/interview_prep.git",
+    liveUrl: "https://ai-interview-prep-ashy.vercel.app/",
     dad: "100",
   },
   {
-    id: 2,
+    id: 3,
     image: FindYourSpace,
     title: "Find Your Space",
     subtitle: "Nearby hotel room search and booking app.",
@@ -182,11 +212,12 @@ export const listProyekFullStack = [
     borderColor: "#10B981",
     gradient: "linear-gradient(180deg, #10B981, #000)",
     url: "https://github.com/divyansh-tripathi/Find-your-space.git",
+    liveUrl: "https://find-your-space-delta.vercel.app/",
     dad: "200",
   },
 
   {
-    id: 3,
+    id: 4,
     image: EcommerceProject,
     title: "E-commerce Website",
     subtitle:
@@ -196,10 +227,11 @@ export const listProyekFullStack = [
     borderColor: "#EF4444",
     gradient: "linear-gradient(180deg, #EF4444, #000)",
     url: "https://github.com/divyansh-tripathi/new-ecomm.git",
+    liveUrl: "https://e-commerce-mu-ruby-56.vercel.app/",
     dad: "300",
   },
   {
-    id: 4,
+    id: 5,
     image: TaskManagerProject,
     title: "Task Management",
     subtitle:
@@ -209,6 +241,7 @@ export const listProyekFullStack = [
     borderColor: "#10B981",
     gradient: "linear-gradient(180deg, #10B981, #000)",
     url: "https://github.com/divyansh-tripathi/task_management.git",
+    liveUrl: "https://task-management-nine-theta.vercel.app/login",
     dad: "400",
   },
 ];
@@ -225,12 +258,13 @@ export const listProyekFrontend = [
     borderColor: "#6366F1",
     gradient: "linear-gradient(180deg, #6366F1, #000)",
     url: "https://github.com/divyansh-tripathi/Portfolio.git",
+    liveUrl: "https://portfolio-204.vercel.app/",
     dad: "100",
   },
   {
     id: 2,
     image: BookStoreProject,
-    title: "BookStore Application",
+    title: "100xBooks",
     subtitle:
       "A digital library interface focusing on user experience and book discovery.",
     fullDescription:
@@ -238,6 +272,7 @@ export const listProyekFrontend = [
     borderColor: "#F59E0B",
     gradient: "linear-gradient(180deg, #F59E0B, #000)",
     url: "https://github.com/divyansh-tripathi/BookStore-Application-main.git",
+    liveUrl: "https://book-store-application-main.vercel.app/",
     dad: "200",
   },
   {
@@ -250,6 +285,7 @@ export const listProyekFrontend = [
     borderColor: "#8B5CF6",
     gradient: "linear-gradient(180deg, #8B5CF6, #000)",
     url: "https://github.com/divyansh-tripathi/ochi.git",
+    liveUrl: "https://ochi-g5se.vercel.app/",
     dad: "300",
   },
   {
@@ -262,6 +298,7 @@ export const listProyekFrontend = [
     borderColor: "#3B82F6",
     gradient: "linear-gradient(180deg, #3B82F6, #000)",
     url: "https://github.com/divyansh-tripathi/blogApp-UI-main.git",
+    liveUrl: "https://blog-app-ui-main.vercel.app/",
     dad: "400",
   },
 ];

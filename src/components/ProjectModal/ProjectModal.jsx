@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiX, FiGithub } from 'react-icons/fi';
+import { FaCirclePlay } from "react-icons/fa6";
+
 
 const ProjectModal = ({ isOpen, onClose, project }) => {
   const [isClosing, setIsClosing] = useState(false);
@@ -33,7 +35,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`bg-zinc-900 border border-violet-500/50 rounded-2xl shadow-2xl shadow-violet-500/20 w-full max-w-lg transform transition-transform duration-300 ${isClosing ? 'animate-out' : 'animate-in'}`}
+        className={`bg-zinc-900 border border-violet-500/50 rounded-2xl shadow-2xl shadow-violet-500/20 w-full max-w-lg max-h-[90vh] overflow-y-auto transform transition-transform duration-300 ${isClosing ? 'animate-out' : 'animate-in'}`}
       >
         <img
           src={project.image}
@@ -56,15 +58,45 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
             {project.fullDescription}
           </p>
 
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center justify-center gap-2 font-semibold bg-violet-600 p-3 px-5 rounded-full w-full cursor-pointer border border-transparent hover:bg-violet-700 transition-colors"
-          >
-            <FiGithub />
-            <span>Source Code</span>
-          </a>
+          {/* Tech Stack Pills */}
+          {project.techStack && project.techStack.length > 0 && (
+            <div className="flex flex-col gap-2">
+              <h3 className="text-xs font-bold text-violet-400 uppercase tracking-widest">
+                Tech Stack
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="text-[11px] sm:text-xs font-semibold px-2.5 py-1 rounded-full bg-violet-600/20 text-violet-300 border border-violet-500/30 whitespace-nowrap"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className='flex justify-between gap-1'>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex items-center justify-center gap-2 font-semibold bg-violet-600 p-3 px-5 rounded-full w-fit cursor-pointer border border-transparent hover:bg-violet-700 transition-colors text-sm"
+            >
+              <FiGithub />
+              <span>Source Code</span>
+            </a>
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex items-center justify-center gap-2 font-semibold bg-violet-600 p-3 px-5 rounded-full w-fit cursor-pointer border border-transparent hover:bg-violet-700 transition-colors text-sm"
+            >
+              <FaCirclePlay />
+              <span>Live Demo</span>
+            </a>
+          </div>
         </div>
       </div>
       <style>{`

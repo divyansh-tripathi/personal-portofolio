@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { auth, loginWithGoogle, logout, db } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import {
@@ -14,6 +14,13 @@ export default function ChatRoom() {
   const [user, setUser] = useState(null);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const messagesContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (u) => setUser(u));
@@ -22,24 +29,40 @@ export default function ChatRoom() {
 
   useEffect(() => {
     const q = query(collection(db, "messages"), orderBy("createdAt"));
-    const unsub = onSnapshot(q, (snapshot) => {
-      setMessages(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-    });
+    const unsub = onSnapshot(
+      q,
+      (snapshot) => {
+        setMessages(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      },
+      (error) => {
+        console.error("Error loading chat messages:", error);
+      }
+    );
     return () => unsub();
   }, []);
 
   const sendMessage = async (e) => {
     e.preventDefault();
-    if (!message.trim()) return;
+    const messageText = message.trim();
+    if (!messageText) return;
 
-    await addDoc(collection(db, "messages"), {
-      text: message,
-      uid: user.uid,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      createdAt: serverTimestamp()
-    });
+    // Optimistically clear the input field instantly
     setMessage("");
+
+    try {
+      await addDoc(collection(db, "messages"), {
+        text: messageText,
+        uid: user.uid,
+        displayName: user.displayName || "User",
+        photoURL: user.photoURL || "https://via.placeholder.com/40",
+        createdAt: serverTimestamp()
+      });
+    } catch (error) {
+      console.error("Error saving message to database:", error);
+      alert("Failed to send message! Please verify your Firestore rules are set to allow reads and writes.");
+      // Restore input text if the save failed
+      setMessage(messageText);
+    }
   };
 
   return (
@@ -49,8 +72,8 @@ export default function ChatRoom() {
       {user && (
         <div className="flex justify-between items-center mb-4 border-b border-gray-700 pb-3">
           <div className="flex items-center gap-3">
-            <img src={user.photoURL} alt="avatar" className="w-10 h-10 rounded-full" />
-            <span className="text-white font-semibold">{user.displayName}</span>
+            <img src={user.photoURL || "https://via.placeholder.com/40"} alt="avatar" className="w-10 h-10 rounded-full" />
+            <span className="text-white font-semibold">{user.displayName || "User"}</span>
           </div>
           <button
             onClick={logout}
@@ -61,7 +84,10 @@ export default function ChatRoom() {
         </div>
       )}
 
-      <div className="h-72 overflow-y-auto border border-gray-700 p-3 rounded-lg bg-zinc-800 mb-4 space-y-3">
+      <div
+        ref={messagesContainerRef}
+        className="h-72 overflow-y-auto border border-gray-700 p-3 rounded-lg bg-zinc-800 mb-4 space-y-3"
+      >
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -80,7 +106,7 @@ export default function ChatRoom() {
                   : "bg-gray-700 text-white"
                 }`}
             >
-              <div className="text-xs opacity-70 mb-1">{msg.displayName}</div>
+              <div className="text-xs opacity-70 mb-1">{msg.displayName || "User"}</div>
               <div>{msg.text}</div>
             </div>
             {msg.uid === user?.uid && (
@@ -100,7 +126,7 @@ export default function ChatRoom() {
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Ketik pesan..."
+            placeholder="Say Something..."
             className="flex-1 min-w-0 p-2 rounded-lg bg-zinc-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button
