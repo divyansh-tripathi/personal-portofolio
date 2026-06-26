@@ -145,7 +145,9 @@ function App() {
                 </h2>
 
                 <BlurText
-                  text="I’m Divyansh Narayan Tripathi, a passionate MERN Stack Developer focused on building modern, scalable, and high-performance web applications with seamless user experiences. I specialize in crafting responsive frontends using React.js and developing robust backend systems with Node.js, Express, and MongoDB. With hands-on experience in real-world projects, I enjoy solving complex problems and transforming ideas into efficient digital solutions. Currently, I’m exploring AI integration with web development and continuously enhancing my skills to build impactful, production-ready applications."
+                  text="MERN Stack Developer. 4 shipped apps. 1 competition win.
+I build full-stack web applications — from REST API design and JWT auth to responsive React UIs and cloud deployment. Recent work includes a Stripe-billed AI SaaS, a multi-role booking platform, and an AI interview prep tool.
+Currently exploring AI integration in web products. Open to full-time roles."
                   delay={150}
                   animateBy="words"
                   direction="top"
@@ -275,14 +277,14 @@ function App() {
             data-aos-once="true"
           >
             <h1
-          className="text-center my-5 text-3xl font-bold mb-4"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          data-aos-once="true"
-        >
-          🚀 Full Stack Projects
-        </h1>
-            
+              className="text-center my-5 text-3xl font-bold mb-4"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-once="true"
+            >
+              🚀 Full Stack Projects
+            </h1>
+
             <ChromaGrid
               items={listProyekFullStack}
               onItemClick={handleProjectClick}
@@ -293,13 +295,13 @@ function App() {
             />
 
             <h1
-          className="text-center my-5 text-3xl font-bold mb-4"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          data-aos-once="true"
-        >
-          🎨 Frontend Projects
-        </h1>
+              className="text-center my-5 text-3xl font-bold mb-4"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-once="true"
+            >
+              🎨 Frontend Projects
+            </h1>
             <ChromaGrid
               items={listProyekFrontend}
               onItemClick={handleProjectClick}

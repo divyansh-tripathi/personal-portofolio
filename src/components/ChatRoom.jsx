@@ -66,7 +66,7 @@ export default function ChatRoom() {
   };
 
   return (
-    <div className="bg-zinc-900 border border-gray-700 p-6 rounded-xl shadow-lg max-w-xl mx-auto mt-5">
+    <div className="bg-zinc-900 border border-gray-700 p-3 sm:p-6 rounded-xl shadow-lg w-full max-w-xl mx-auto mt-5 box-border">
       <h2 className="text-2xl font-bold text-center mb-4 text-white">💬 Chat Room</h2>
 
       {user && (
@@ -101,7 +101,7 @@ export default function ChatRoom() {
               />
             )}
             <div
-              className={`p-3 rounded-lg max-w-[75%] ${msg.uid === user?.uid
+              className={`p-3 rounded-lg max-w-[80%] sm:max-w-[75%] break-words ${msg.uid === user?.uid
                   ? "bg-blue-500 text-white"
                   : "bg-gray-700 text-white"
                 }`}
